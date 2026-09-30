@@ -43,7 +43,7 @@ const getActiveUsers = async (socket, io, redisClient) => {
 const setupWebsocketConnection = async (httpServer) => {
     const io = new Server(httpServer, {
         cors: {
-            origin: process.env.FRONTEND_URL||"http://localhost:3000",
+            origin: process.env.FRONTEND_URL || "http://localhost:3000",
             credentials: true
         }
     })
@@ -294,6 +294,10 @@ const setupWebsocketConnection = async (httpServer) => {
 
             // socket.to(socket.docId).emit("active-users", activeUsers)
         })
+
+        socket.on('error', (err) => {
+            console.error(`Socket error on ${socket.id}:`, err);
+        });
 
     })
 

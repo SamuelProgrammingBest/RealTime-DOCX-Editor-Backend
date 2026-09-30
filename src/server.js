@@ -38,7 +38,7 @@ const startServer = async () => {
         })
 
         setupWebsocketConnection(server).catch((err) => {
-            throw new AppError(`WebSocket Connection Failed with error ${err.message}`, 500)
+            console.error(`WebSocket Connection Setup Failed: ${err.message}`);
         })
     } catch (error) {
         process.exitCode = 1
