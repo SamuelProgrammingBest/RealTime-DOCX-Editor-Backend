@@ -43,7 +43,7 @@ const getActiveUsers = async (socket, io, redisClient) => {
 const setupWebsocketConnection = async (httpServer) => {
     const io = new Server(httpServer, {
         cors: {
-            origin: "http://localhost:3000",
+            origin: process.env.FRONTEND_URL||"http://localhost:3000",
             credentials: true
         }
     })

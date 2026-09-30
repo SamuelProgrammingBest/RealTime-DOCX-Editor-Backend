@@ -10,7 +10,7 @@ const signUp = async (req, res) => {
 
     res.cookie('token', token, {
         httpOnly: true, // Prevents client-side JS from reading the cookie (protects against XSS)
-        secure: false, // Ensures cookie is only sepnt over HTTPS
+        secure: true, // Ensures cookie is only sepnt over HTTPS
         sameSite: 'lax', // Protects against CSRF attacks
         maxAge: 3600000 // 1 hour in milliseconds
     });
@@ -24,7 +24,7 @@ const login = async (req, res) => {
 
     res.cookie('token', token, {
         httpOnly: true, // Prevents client-side JS from reading the cookie (protects against XSS)
-        secure: false, // Ensures cookie is only sent over HTTPS
+        secure: true, // Ensures cookie is only sent over HTTPS
         sameSite: 'lax', // Protects against CSRF attacks
         maxAge: 3600000 // 1 hour in milliseconds
     });
