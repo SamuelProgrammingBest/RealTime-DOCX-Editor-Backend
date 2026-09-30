@@ -47,6 +47,7 @@ const startServer = async () => {
 
 server.on("error", (error) => {
     process.exitCode = 1
+    console.log(error.message)
 })
 
 startServer()

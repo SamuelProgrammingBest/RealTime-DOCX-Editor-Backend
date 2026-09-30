@@ -7,7 +7,7 @@ const connectRedis = async () => {
         }
     )
 
-    client.on('error', () => {
+    client.on('error', (err) => {
         console.error('Redis Client Error', err);
     });
 
