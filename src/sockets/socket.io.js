@@ -179,6 +179,7 @@ const setupWebsocketConnection = async (httpServer) => {
 
                 // await Document.findOneAndUpdate({ linkId: docId }, {collaborators:})
             } catch (error) {
+                console.error("There was an error in this socket operations", error.message)
             }
 
 
